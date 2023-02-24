@@ -1,0 +1,30 @@
+
+
+#contenedorInputs{
+    border-top: 1px solid gray;
+    border-left: 1px solid gray;
+}
+.spacediv{
+    margin-top: 2px;
+}
+
+.labelText{
+    display: inline-block;
+    width: 210px;
+}
+
+.inputText{
+    width: 400px;
+    margin-left: 20px;
+}
+.chxb{
+    width: 1em;
+    height: 1em;
+    border-radius: 25%;
+    margin-right: 5px;
+    background-color: #fff;
+}
+.btnDiv{
+    margin-top: 40px;
+    border-radius: 25%;
+}
