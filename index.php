@@ -15,6 +15,19 @@
     <title>Document</title>
 </head>
 <body>
+
+
+<!-- Desde nuestra fundación en 1998, nuestra empresa ha tenido un enfoque claro en el desarrollo de sistemas 
+y la atención al cliente. Empezamos nuestra actividad brindando soporte técnico a importantes empresas y, con el tiempo, evolucionamos para convertirnos en pioneros en 
+la creación de soluciones web de gran envergadura. Hoy en día, nuestro objetivo sigue siendo el mismo: convertirnos en un socio estratégico para nuestros clientes en el
+siempre cambiante mundo de la tecnología. Creemos que la estabilidad y el compromiso son fundamentales para brindar un servicio excepcional, y nos enorgullece decir que
+estos valores han sido y seguirán siendo la base de nuestra trayectoria empresarial. -->
+
+<!-- En nuestra empresa, nuestra visión es ser líderes en el desarrollo de soluciones tecnológicas, ofreciendo servicios y productos de alta calidad que satisfagan las
+necesidades de nuestros clientes. Nos esforzamos por mantenernos a la vanguardia de la tecnología y ser un socio estratégico en el mundo empresarial, proporcionando 
+soluciones innovadoras que impulsen el éxito de nuestros clientes. Creemos que la estabilidad, el compromiso y la excelencia son los pilares fundamentales que guían
+nuestro trabajo diario y nos permiten seguir siendo una empresa sólida y en constante crecimiento. Estamos comprometidos a brindar un servicio excepcional, 
+superando las expectativas de nuestros clientes y estableciendo relaciones duraderas basadas en la confianza y la colaboración. -->
     
     <?php  
         include 'config/database.php';
@@ -35,14 +48,14 @@
             <div class="col-12  mt-3 border rounded-3 shadow p-3 mb-4">
                 <h4>Formulario Votación:</h4>
                 <div class="container" id="contenedorInputs">
-                    <form action="" class="spacediv">
+                    <form action="" class="spacediv" id="form">
                         <div class="form-group">
                             <label class="labelText" for="">Nombre y Apellido</label>
                             <input type="text" required class="inputText">
                         </div>
                         <div class="form-group mt-2">
                             <label class="labelText" for="">Alias</label>
-                            <input type="text" required class="inputText">
+                            <input type="text" required class="inputText" id="alias">
                         </div>
                         <div class="form-group mt-2">
                             <label class="labelText" for="">RUT</label>
@@ -63,7 +76,7 @@
                         </div>
                         <div class="form-group mt-2">
                             <label class="labelText" for="selectCom">Comuna</label>
-                            <select name="selectCom" id="slpru" class="inputText">
+                            <select name="selectCom" id="comselec" class="inputText">
                                 <option value="0" id="opval">Seleccionar Comuna</option>
                         </select>
                         </div>
@@ -98,11 +111,22 @@
                 url:'controller/datacom.php',
                 data: "id_reg=" + val,
                 success: function(res){
-                    $('#slpru').html(res);
+                    $('#comselec').html(res);
                 }
             });
             console.log(val);
         });
+        $('#form').on('submit', function(evt) {
+            let form = $(this);
+            let sobrenombre = form.find('#alias');
+            let alias_len = sobrenombre.val().length;
+            if (alias_len < 5) {
+                $('#alias').after('<span>Tú alias debe tener al menos 5 carácteres</span>')
+                jQuery('#error').show();
+                evt.preventDefault();
+            }
+        })
+
         </script>
 </body>
 </html>
