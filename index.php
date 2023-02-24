@@ -97,8 +97,8 @@
                 type: "POST",
                 url:'controller/datacom.php',
                 data: "id_reg=" + val,
-                success: function(r){
-                    $('#slpru').html(r);
+                success: function(res){
+                    $('#slpru').html(res);
                 }
             });
             console.log(val);
