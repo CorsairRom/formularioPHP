@@ -1,0 +1,10 @@
+Pasos para instalar el proyecto:
+1.- He usado xampp para la creacion del proyecto, por lo cual dentro de la carpeta htdocs, crear una carpeta 'formularioPHP',
+    la ruta quedaria, 'xampp\htdocs\formularioPHP'
+2.- Luego clonar los archivos de github, https://github.com/CorsairRom/formularioPHP.git en la ruta mencionada y 
+    a continuacion activar servidor web y base de datos de xampp
+3.- Cargar la base de datos, use mysql por lo tanto crear una base de datos con el nombre de 'formulariophp'.
+4.- En la carpeta database, se encuentra el script para poder cargar las tablas y datos dentro de la base de datos
+     recien creada mediante comando sql.
+5.- Ya corriendo nuestro servidor podemos ingresar en nuestro navegador web la ruta 'http://localhost/formulariophp/' 
+    para visualizar el formulario.
