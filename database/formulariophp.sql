@@ -477,7 +477,6 @@ CREATE TABLE `votantes` (
 --
 
 INSERT INTO `votantes` (`rut_votante`, `nom_ape`) VALUES
-('', ''),
 ('111111111', 'alexis'),
 ('182023000', 'richard romero'),
 ('184152010', 'patricia cabezas');
