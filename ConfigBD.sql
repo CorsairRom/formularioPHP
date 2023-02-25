@@ -374,3 +374,26 @@ INSERT INTO `comunas` (`id_com`,`nom_com`, `fk_reg`) VALUES
 (NULL, 'Timaukel','12'),
 (NULL, 'Torres del Paine','12');
 
+CREATE TABLE `formulariophp`.`candidatos` (`id_candidato` INT(3) NOT NULL AUTO_INCREMENT , `nom_candidato` VARCHAR(200) NOT NULL , PRIMARY KEY (`id_candidato`)) ENGINE = InnoDB;
+INSERT INTO `candidatos` (`id_candidato`, `nom_candidato`) VALUES (NULL, 'Brendan Fraser'), (NULL, 'Austin Butler'), (NULL, 'Colin Farrell'), (NULL, 'Paul Mescal '), (NULL, 'Bill Nighy')
+INSERT INTO `votantes` (`rut_votante`, `nom_ape`) VALUES ('18.202.300-0', 'richard romero')
+DELIMITER $$
+CREATE PROCEDURE sp_get_regiones()
+BEGIN
+	SELECT *
+    FROM regiones;
+END
+
+DELIMITER $$
+CREATE PROCEDURE sp_get_comunas()
+BEGIN
+	SELECT *
+    FROM comunas;
+END 
+
+DELIMITER $$
+CREATE PROCEDURE sp_get_candidatos()
+BEGIN
+	SELECT *
+    FROM comunas;
+END 
