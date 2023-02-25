@@ -15,9 +15,11 @@
     <title>Document</title>
 </head>
 <body>
-
-    
+ 
     <?php  
+        //conexion a la base de datos y las consultas que necesitamos para cargar los datos en los select, me gustaria haber manejado estas consultar mediante
+        // procedimientos almacenados para limitar la visulizacion del cuerpo de la base de datos, pero no tengo aun ese conocimiento en este lenguaje. Debo mencionar
+        // que este es mi primer contacto con php.
         include 'config/database.php';
         $consultaReg = "SELECT * FROM regiones";
         $queryReg = mysqli_query($mysqli, $consultaReg);
@@ -100,6 +102,7 @@
     <script src="assets/js/checkRut.js"></script>
     <script src="assets/js/formvalid.js"></script>
     <script>
+        // funcion que detecta el cambio de opciones en el select, con la finalidad de mediante el id region filtrar las comunas que pertenescan a esta region
         $('#selectReg').change(function() {
             let val = $('#selectReg').val();
             $.ajax({

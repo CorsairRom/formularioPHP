@@ -1,4 +1,7 @@
 <?php 
+    // mediane un bloque try catch realizaremos un insert de los datos del votante, esto para cumplir con la validacion de duplicidad de rut, 
+    // ya que en la base de datos el votante tendra como id su rut y en caso que este vuelva a ingresar un voto la base de datos no lo permitiria al arrogar un
+    //error de duplicidad
     try {
         include '../config/database.php';
         $nom_app = trim($_POST['nom_app']);

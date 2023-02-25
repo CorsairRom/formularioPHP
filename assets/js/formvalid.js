@@ -1,3 +1,4 @@
+// funcion para validar el rut mediante el metodo del mod 11.
 const validRut = (rut) =>{
     let valor = rut;
     let bodyRut = valor.slice(0, -1);
@@ -31,7 +32,7 @@ const validRut = (rut) =>{
       }
 };
 
-
+//funcion para validar el rut y cargar los datos del votante la base de datos.
 $('#form').on('submit', function(evt) {
     let alias;
     let chk, booleanCandidatos;

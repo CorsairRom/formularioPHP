@@ -1,3 +1,5 @@
+ //esta funcion se ocupo para extraer las comunas y regiones de chile y con esta informacion crear los insert necesarios para cargar
+ //esta informacion en la base de datos. Hay un boton deshabilitado en el index que llama esta funcion.
  const  data = async () =>{
     const ruta = 'assets/js/comunas.json'
     const response = await fetch(ruta)

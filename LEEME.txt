@@ -8,3 +8,6 @@ Pasos para instalar el proyecto:
      recien creada mediante comando sql.
 5.- Ya corriendo nuestro servidor podemos ingresar en nuestro navegador web la ruta 'http://localhost/formulariophp/' 
     para visualizar el formulario.
+    
+    PHP Version 8.1.6
+    10.4.24-MariaDB
