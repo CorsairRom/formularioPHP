@@ -1,4 +1,4 @@
-// funcion para validar el rut mediante el metodo del mod 11.
+// funcion para validar el rut mediante el metodo del mod 11. "Deberá Validar el RUT (Formato Chile)"
 const validRut = (rut) =>{
     let valor = rut;
     let bodyRut = valor.slice(0, -1);
@@ -40,6 +40,8 @@ $('#form').on('submit', function(evt) {
     let sobrenombre = form.find('#alias');
     let nom = form.find('#nom_app').val();
     let alias_len = sobrenombre.val().length;
+
+    // validacion el alias "Validar que la cantidad de caracteres sea mayor a 5 y que contenga letras y números"
     if (alias_len < 5) {
       evt.preventDefault();
       $('#alias').after('<span>Tú alias debe tener al menos 5 carácteres</span>')
@@ -47,6 +49,7 @@ $('#form').on('submit', function(evt) {
     }
     var chkb = $('.checkbox');
     var chkb_sel = chkb.filter(':checked');
+    //validacion de que al menos dos casillas esten seleccionadas en el checkbox.
     if (chkb_sel.length < 2) {
       evt.preventDefault();
       alert('Debe seleccionar al menos dos casillas en: Como se entero de Nosotros');
@@ -54,26 +57,31 @@ $('#form').on('submit', function(evt) {
     };
     let rut = clean($('#valRut').val());
     let booleanRut = validRut(rut);
+    //validacion del rut
     if (booleanRut == false) {
       evt.preventDefault();
       alert('Rut Inválido')
     }
     let valcandidatos = $('#selectCandidatos').val();
+    //validar que al menos se haya seleccionado un candidato
     if (valcandidatos < 1) {
       evt.preventDefault();
       alert('Seleccione un candidato')
       booleanCandidatos = false;
     }
     let valcomuna = $('#comselec').val();
+    //validar que se haya seleccionado una comuna.
     if (valcomuna < 1) {
       evt.preventDefault();
       alert('seleccione una comuna')
     }
     let valreg = $('#selectReg').val();
+    //validar que se haya seleccionado una región.
     if (valreg < 1) {
       evt.preventDefault();
       alert('seleccione una región')
     }
+    //validacion de que todos los campos esten llenos.
     if (booleanRut && alias && chk && booleanCandidatos) {
       var dataString = 'nom_app=' + nom + '&valRut=' + rut;
       $.ajax({

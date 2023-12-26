@@ -15,11 +15,8 @@
     <title>Document</title>
 </head>
 <body>
- 
     <?php  
-        //conexion a la base de datos y las consultas que necesitamos para cargar los datos en los select, me gustaria haber manejado estas consultar mediante
-        // procedimientos almacenados para limitar la visulizacion del cuerpo de la base de datos, pero no tengo aun ese conocimiento en este lenguaje. Debo mencionar
-        // que este es mi primer contacto con php.
+        //conexion a la base de datos y las consultas que necesitamos para cargar los datos en los select
         include 'config/database.php';
         $consultaReg = "SELECT * FROM regiones";
         $queryReg = mysqli_query($mysqli, $consultaReg);
@@ -42,10 +39,12 @@
                     <form action="#" class="spacediv" id="form">
                         <div class="form-group">
                             <label class="labelText" for="nom_app">Nombre y Apellido</label>
+                            <!-- nombre y apellido al ser requerido no puedo quedar en blanco, validacion básica propia de html -->
                             <input type="text" required class="inputText" id="nom_app" name="nom_app">
                         </div>
                         <div class="form-group mt-2">
                             <label class="labelText" for="alias">Alias</label>
+                            <!-- alias solo puede contener letras, numeros y guiones, validacion básica propia de html -->
                             <input type="text" required class="inputText" id="alias" pattern="[a-zA-Z0-9-]+" name="alias">
                         </div>
                         <div class="form-group mt-2">
@@ -54,10 +53,12 @@
                         </div>
                         <div class="form-group mt-2">
                             <label class="labelText" for="email"> Email</label>
+                            <!-- validacion básica propia de html -->
                             <input type="email" required class="inputText" id="email" name="email">
                         </div>
                         <div class="form-group mt-2">
                             <label class="labelText" for="selectReg"> Región</label>
+                            <!-- No deberán quedar en blanco y entre los combos debe existir relación Región->Comuna. -->
                             <select name='selectReg'  id="selectReg" class="inputText" >
                             <option value="0">Seleccionar Región</option>
                             <?php  foreach ($queryReg as $optionReg):?>
@@ -74,6 +75,7 @@
                         
                         <div class="form-group mt-2">
                             <label class="labelText" for="selectCandidatos"> Candidato</label>
+                            <!-- El Combo Box Candidato debe cargar los datos desde Base de Datos. -->
                             <select name="selectCandidatos" id="selectCandidatos" class="inputText">
                                 <option value="0">Seleccionar Candidato</option>
                                 <?php  foreach ($queryCandidatos as $optionCandidatos):?>
@@ -82,6 +84,7 @@
                             </select>
                         </div>
                         <div class="form-group mt-2">
+                        <!-- Checkbox “Como se enteró de Nosotros”: Debe elegir al menos dos opciones.  -->
                             <label class="labelText" for=""> Como se enteró de Nosotros</label>
                             <label for=""><input type="checkbox" id="chbox1" class="chxb checkbox">Web</label>
                             <label for=""><input type="checkbox" id="chbox2" class="chxb checkbox">TV</label>
@@ -93,7 +96,7 @@
                         </div>
                         
                     </form>
-                    <!-- <button onclick="data()">Ver data</button> -->
+                    
                 </div>
             </div>
         </div>
