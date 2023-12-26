@@ -41,19 +41,19 @@
                 <div class="container" id="contenedorInputs">
                     <form action="#" class="spacediv" id="form">
                         <div class="form-group">
-                            <label class="labelText" for="">Nombre y Apellido</label>
+                            <label class="labelText" for="nom_app">Nombre y Apellido</label>
                             <input type="text" required class="inputText" id="nom_app" name="nom_app">
                         </div>
                         <div class="form-group mt-2">
-                            <label class="labelText" for="">Alias</label>
+                            <label class="labelText" for="alias">Alias</label>
                             <input type="text" required class="inputText" id="alias" pattern="[a-zA-Z0-9-]+" name="alias">
                         </div>
                         <div class="form-group mt-2">
-                            <label class="labelText" for="">RUT</label>
+                            <label class="labelText" for="valRut">RUT</label>
                             <input type="text" required class="inputText" id="valRut" name="valRut" placeholder=" " onkeypress = 'return isNumber(event)' oninput = "return checkRut(this)" maxlength= "12">
                         </div>
                         <div class="form-group mt-2">
-                            <label class="labelText" for=""> Email</label>
+                            <label class="labelText" for="email"> Email</label>
                             <input type="email" required class="inputText" id="email" name="email">
                         </div>
                         <div class="form-group mt-2">
@@ -73,7 +73,7 @@
                         </div>
                         
                         <div class="form-group mt-2">
-                            <label class="labelText" for=""> Candidato</label>
+                            <label class="labelText" for="selectCandidatos"> Candidato</label>
                             <select name="selectCandidatos" id="selectCandidatos" class="inputText">
                                 <option value="0">Seleccionar Candidato</option>
                                 <?php  foreach ($queryCandidatos as $optionCandidatos):?>
